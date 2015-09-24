@@ -1,0 +1,1 @@
+# docker-generate-npm-authtoken
