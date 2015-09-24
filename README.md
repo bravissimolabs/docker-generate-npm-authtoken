@@ -2,4 +2,4 @@
 
 Node.js + git + expect
 
-More todo later.
+Rest of README: TODO.
