@@ -11,8 +11,11 @@ RUN apt-get install -yq \
     expect-dev \
     nodejs
 
-# Select specific version of Node.js via n
-RUN npm install -g n; \
+# Update npm, then select specific version of Node.js via n
+RUN npm install -g npm && \
+    npm install -g n; \
     n 0.12;
 
-CMD ["bash"]
+ADD bin/ /usr/local/bin
+
+CMD ["bash", "/usr/local/bin/npm.sh"]
