@@ -1,4 +1,4 @@
-FROM adamkdean/baseimage
+FROM bravissimolabs/baseimage
 MAINTAINER Adam K Dean <adamkdean@googlemail.com>
 
 # Add Git and Node package sources
