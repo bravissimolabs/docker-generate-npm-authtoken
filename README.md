@@ -1,5 +1,7 @@
 # docker-generate-npm-authtoken
 
+Input credentials, output auth token.
+
 ## Why
 
 For some reason, the `npm login` command is interactive, and this causes problems when you need to call the command from non-interactive shells such as in a Dockerfile. By using the `bravissimolabs/generate-npm-authtoken` you can generate an auth token. Output this to `~/.npmrc` and you are now authenticated with npm and can `npm install` private npm modules.
