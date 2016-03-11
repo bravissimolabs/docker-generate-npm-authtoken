@@ -31,3 +31,15 @@ Bear in mind that this will overwrite an existing `.npmrc`, so if you don't want
         -e NPM_EMAIL=$NPM_EMAIL \
         bravissimolabs/generate-npm-authtoken \
         >> ~/.npmrc
+
+## Using a different registry
+
+If you need to use a different registry, pass the environment variable `NPM_REGISTRY` through, but make sure it has the protocol specified, i.e. `NPM_REGISTRY=https://skimdb.npmjs.com/registry`, NOT `NPM_REGISTRY=skimdb.npmjs.com/registry`.
+
+    docker run \
+        -e NPM_USER=$NPM_USER \
+        -e NPM_PASS=$NPM_PASS \
+        -e NPM_EMAIL=$NPM_EMAIL \
+        -e NPM_REGISTRY=$NPM_REGISTRY \
+        bravissimolabs/generate-npm-authtoken \
+        >> ~/.npmrc
