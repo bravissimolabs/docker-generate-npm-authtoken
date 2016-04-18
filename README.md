@@ -43,3 +43,16 @@ If you need to use a different registry, pass the environment variable `NPM_REGI
         -e NPM_REGISTRY=$NPM_REGISTRY \
         bravissimolabs/generate-npm-authtoken \
         >> ~/.npmrc
+
+##Using a different registry with a scope
+
+You can extend your registry login by adding a scope.
+
+    docker run \
+        -e NPM_USER=$NPM_USER \
+        -e NPM_PASS=$NPM_PASS \
+        -e NPM_EMAIL=$NPM_EMAIL \
+        -e NPM_REGISTRY=$NPM_REGISTRY \
+        -e NPM_SCOPE=$YOUR_NPM_SCOPE
+         bravissimolabs/generate-npm-authtoken \
+         >> ~/.npmrc
