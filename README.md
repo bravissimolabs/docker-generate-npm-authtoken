@@ -1,6 +1,6 @@
 # docker-generate-npm-authtoken
-
-Input credentials, output auth token.
+This is a fork from the [docker-generate-npm-authtoken](https://github.com/bravissimolabs/docker-generate-npm-authtoken)
+I decided create this fork since the original project looks abandoned.
 
 ## Why
 
