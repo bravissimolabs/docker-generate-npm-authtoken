@@ -1,21 +1,16 @@
-FROM bravissimolabs/baseimage
+FROM node:12-stretch
 MAINTAINER Adam K Dean <adamkdean@googlemail.com>
 
-# Add Git and Node package sources
-RUN add-apt-repository -y ppa:git-core/ppa; \
-    curl -sL https://deb.nodesource.com/setup | sudo bash -
+# Add git and expect
+RUN apt update && apt -y install \
+	git expect-dev
 
-# Install packages
-RUN apt-get install -yq \
-    git \
-    expect-dev \
-    nodejs
+# Copy the login scripts
+COPY bin/ /usr/local/bin
 
-# Update npm, then select specific version of Node.js via n
-RUN npm install -g npm && \
-    npm install -g n; \
-    n 0.12;
-
-ADD bin/ /usr/local/bin
+# Clean up
+RUN apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
+    rm /var/log/lastlog /var/log/faillog
 
 CMD ["bash", "/usr/local/bin/npm.sh"]
